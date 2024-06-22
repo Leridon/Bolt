@@ -13,6 +13,8 @@
 
 #if defined(_WIN32)
 #include <windows.h>
+#include <iostream>
+
 #endif
 
 #if defined(__linux__)
@@ -249,8 +251,9 @@ bool LockXdgDirectories(std::filesystem::path& config_dir, std::filesystem::path
 
 #if defined(_WIN32)
 int wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t* lpCmdLine, int nCmdShow) {
+    std::cout << "test\n" << std::endl;
 	setlocale(LC_CTYPE, "");
-	
+
 	// Provide CEF with command-line arguments
 	// Re-run with --disable-web-security if it's not already there, because a certain company's API endpoints
 	// don't have correct access control settings; remove this setting if they ever get their stuff together
